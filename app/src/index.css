@@ -1,0 +1,159 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Prime Lar Estofados - Warm Elegant Theme */
+    --background: 43 56% 94%; /* #fbf4e4 - warm cream */
+    --foreground: 44 17% 26%; /* #504a3a - warm dark brown */
+    --card: 43 50% 96%;
+    --card-foreground: 44 17% 26%;
+    --popover: 43 56% 94%;
+    --popover-foreground: 44 17% 26%;
+    --primary: 44 17% 26%;
+    --primary-foreground: 43 56% 94%;
+    --secondary: 43 30% 88%;
+    --secondary-foreground: 44 17% 26%;
+    --muted: 43 25% 90%;
+    --muted-foreground: 44 15% 45%;
+    --accent: 142 50% 35%;
+    --accent-foreground: 43 56% 94%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 44 17% 26% / 0.15;
+    --input: 43 30% 88%;
+    --ring: 44 17% 26%;
+    --radius: 0.5rem;
+    
+    /* Custom properties - Prime Lar */
+    --warm-cream: #fbf4e4;
+    --warm-dark: #504a3a;
+    --warm-light: #f5ecd8;
+    --warm-accent: #6b8e5a;
+    --whatsapp-green: #25D366;
+  }
+
+  .dark-section {
+    --background: 44 17% 26%;
+    --foreground: 43 56% 94%;
+    --card: 44 15% 22%;
+    --card-foreground: 43 56% 94%;
+    --muted: 44 15% 32%;
+    --muted-foreground: 43 30% 75%;
+    --border: 43 56% 94% / 0.1;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+  }
+  
+  .font-serif {
+    font-family: 'Playfair Display', serif;
+  }
+  
+  .font-sans {
+    font-family: 'Montserrat', sans-serif;
+  }
+  
+  .font-body {
+    font-family: 'Inter', sans-serif;
+  }
+}
+
+@layer components {
+  /* WhatsApp Button Pulse Animation */
+  @keyframes whatsapp-pulse {
+    0% {
+      box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+    }
+    70% {
+      box-shadow: 0 0 0 20px rgba(37, 211, 102, 0);
+    }
+    100% {
+      box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+    }
+  }
+  
+  .whatsapp-pulse {
+    animation: whatsapp-pulse 2s infinite;
+  }
+  
+  /* Button hover effects */
+  .btn-primary {
+    @apply bg-[#504a3a] text-[#fbf4e4] px-6 py-3 rounded-lg font-medium transition-all duration-300;
+  }
+  
+  .btn-primary:hover {
+    @apply bg-[#3d382b] transform -translate-y-0.5;
+    box-shadow: 0 10px 25px -5px rgba(80, 74, 58, 0.4);
+  }
+  
+  .btn-secondary {
+    @apply bg-transparent border-2 border-[#504a3a] text-[#504a3a] px-6 py-3 rounded-lg font-medium transition-all duration-300;
+  }
+  
+  .btn-secondary:hover {
+    @apply bg-[#504a3a] text-[#fbf4e4];
+  }
+  
+  /* Form input styles */
+  .form-input {
+    @apply w-full px-4 py-3 rounded-lg border border-[#504a3a]/20 bg-white/80 text-[#504a3a] placeholder:text-[#504a3a]/50 transition-all duration-300;
+  }
+  
+  .form-input:focus {
+    @apply outline-none border-[#504a3a]/50 bg-white;
+    box-shadow: 0 0 0 3px rgba(80, 74, 58, 0.1);
+  }
+  
+  /* Section backgrounds */
+  .section-light {
+    @apply bg-[#fbf4e4];
+  }
+  
+  .section-dark {
+    @apply bg-[#504a3a] text-[#fbf4e4];
+  }
+  
+  /* Card styles */
+  .card-elegant {
+    @apply bg-white/80 backdrop-blur-sm rounded-xl p-6 border border-[#504a3a]/10 transition-all duration-300;
+  }
+  
+  .card-elegant:hover {
+    @apply transform -translate-y-1;
+    box-shadow: 0 20px 40px -10px rgba(80, 74, 58, 0.15);
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  .tracking-tight {
+    letter-spacing: -0.025em;
+  }
+  
+  .tracking-tighter {
+    letter-spacing: -0.05em;
+  }
+}

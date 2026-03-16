@@ -32,6 +32,7 @@ export const heroConfig: HeroConfig = {
   navLinks: [
     { label: "Início", href: "#inicio" },
     { label: "Serviços", href: "#servicos" },
+    { label: "Pronta Entrega", href: "#pronta-entrega" },
     { label: "Benefícios", href: "#beneficios" },
     { label: "Contato", href: "#contato" },
   ],

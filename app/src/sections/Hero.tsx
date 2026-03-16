@@ -164,7 +164,7 @@ export function Hero() {
               <span className="italic font-serif font-normal text-[#f5ecd8]">Estofados</span>
             </h2>
             <p className="mt-6 text-lg md:text-xl text-[#fbf4e4]/80 max-w-xl mx-auto lg:mx-0">
-              Especialistas em limpeza, impermeabilização e restauração. Qualidade premium para o seu lar.
+              Especialistas em restauração. Qualidade premium para o seu lar.
             </p>
             <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
               <button

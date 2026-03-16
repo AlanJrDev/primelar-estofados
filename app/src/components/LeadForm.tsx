@@ -173,7 +173,7 @@ export function LeadForm() {
                   className="form-input appearance-none cursor-pointer"
                 >
                   <option value="">Selecione um serviço</option>
-                  <option value="Reforma de Estofados">Higienização Completa</option>
+                  <option value="Reforma de Estofados">Reforma de Estofados</option>
                   <option value="Restauração">Restauração</option>
                   <option value="Outros">Outros</option>
                 </select>

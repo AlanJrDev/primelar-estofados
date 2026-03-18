@@ -5,12 +5,14 @@ export interface SiteConfig {
   language: string;
   siteTitle: string;
   siteDescription: string;
+  whatsappNumber: string;
 }
 
 export const siteConfig: SiteConfig = {
   language: "pt-BR",
   siteTitle: "Prime Lar Estofados - Reforma e Fabricação Premium",
   siteDescription: "Especialistas em reforma, fabricação e restauração de estofados. Qualidade premium e acabamento impecável para o seu lar.",
+  whatsappNumber: "5561995167436",
 };
 
 // Hero Section

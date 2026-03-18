@@ -407,3 +407,74 @@ export const leadFormConfig: LeadFormConfig = {
   buttonText: "Solicitar Orçamento Agora",
   whatsappNumber: "5561995167436",
 };
+
+// Pronta Entrega Section
+export interface ProdutoProntaEntrega {
+  id: number;
+  nome: string;
+  categoria: string;
+  imagem: string;
+  descricao: string;
+  disponibilidade: string;
+  preco: string;
+  precoOriginal?: string;
+}
+
+export interface ProntaEntregaConfig {
+  subtitle: string;
+  titleRegular: string;
+  titleItalic: string;
+  description: string;
+  produtos: ProdutoProntaEntrega[];
+  ctaText: string;
+  ctaHref: string;
+}
+
+export const prontaEntregaConfig: ProntaEntregaConfig = {
+  subtitle: "PRONTA ENTREGA",
+  titleRegular: "Estofados",
+  titleItalic: "Disponíveis",
+  description: "Peças prontas para entrega imediata. Sofás, poltronas e puffs com qualidade Prime Lar, disponíveis para levar hoje mesmo!",
+  produtos: [
+    {
+      id: 1,
+      nome: "Sofá 3 Lugares Linho",
+      categoria: "Sofá",
+      imagem: "/projeto-1.jpg",
+      descricao: "Sofá 3 lugares em linho bege, estrutura em madeira maciça.",
+      disponibilidade: "1 unidade disponível",
+      preco: "R$ 2.890",
+      precoOriginal: "R$ 3.490"
+    },
+    {
+      id: 2,
+      nome: "Poltrona Decorativa Veludo",
+      categoria: "Poltrona",
+      imagem: "/projeto-2.jpg",
+      descricao: "Poltrona em veludo verde musgo, pés palito em madeira natural.",
+      disponibilidade: "2 unidades disponíveis",
+      preco: "R$ 1.290"
+    },
+    {
+      id: 3,
+      nome: "Sofá Retrátil 2,40m",
+      categoria: "Sofá Retrátil",
+      imagem: "/projeto-3.jpg",
+      descricao: "Sofá retrátil e reclinável 2,40m em suede cinza.",
+      disponibilidade: "1 unidade disponível",
+      preco: "R$ 3.490",
+      precoOriginal: "R$ 4.190"
+    },
+    {
+      id: 4,
+      nome: "Cabeceira Queen Estofada",
+      categoria: "Cabeceira",
+      imagem: "/projeto-4.jpg",
+      descricao: "Cabeceira Queen size em linho off-white com capitonê.",
+      disponibilidade: "3 unidades disponíveis",
+      preco: "R$ 890"
+    }
+  ],
+  ctaText: "Ver Todos os Produtos",
+  ctaHref: "#"
+};

@@ -11,6 +11,7 @@ import { Footer } from './sections/Footer';
 import { FloatingWhatsApp } from './components/FloatingWhatsApp';
 import { LeadForm } from './components/LeadForm';
 import { siteConfig } from './config';
+import { ProntaEntrega } from './sections/ProntaEntrega';
 import './App.css';
 
 // Extend Window interface for dataLayer
@@ -50,6 +51,9 @@ function App() {
 
       {/* Why Choose Me & Stats - Benefits Section */}
       <WhyChooseMe />
+
+      {/* Pronta Entrega Section */}
+      <ProntaEntrega />
 
       {/* Featured Projects - Portfolio */}
       <FeaturedProjects />

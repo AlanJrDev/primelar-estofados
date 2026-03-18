@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { heroConfig } from '../config';
@@ -7,6 +7,7 @@ import { MessageCircle } from 'lucide-react';
 gsap.registerPlugin(ScrollTrigger);
 
 export function Hero() {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const sectionRef = useRef<HTMLElement>(null);
   const textRef = useRef<HTMLDivElement>(null);
   const modelRef = useRef<HTMLDivElement>(null);
@@ -231,12 +232,52 @@ export function Hero() {
           <MessageCircle className="w-4 h-4" />
           Fale Conosco
         </button>
-        <button className="md:hidden text-[#fbf4e4]">
+        <button 
+          className="md:hidden text-[#fbf4e4]"
+          onClick={() => setIsMobileMenuOpen(true)}
+        >
           <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
           </svg>
         </button>
       </nav>
+
+      {/* Mobile Menu Overlay */}
+      {isMobileMenuOpen && (
+        <div className="fixed inset-0 z-50 bg-[#504a3a] flex flex-col pt-24 px-6 gap-6 md:hidden">
+          <button 
+            className="absolute top-6 right-6 text-[#fbf4e4]"
+            onClick={() => setIsMobileMenuOpen(false)}
+          >
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+          {heroConfig.navLinks.map((link) => (
+            <a 
+              key={link.label} 
+              href={link.href} 
+              onClick={(e) => {
+                handleNavClick(e, link.href);
+                setIsMobileMenuOpen(false);
+              }}
+              className="text-[#fbf4e4] text-2xl font-body"
+            >
+              {link.label}
+            </a>
+          ))}
+          <button 
+            onClick={() => {
+              handleFaleConoscoClick();
+              setIsMobileMenuOpen(false);
+            }}
+            className="mt-8 flex items-center justify-center gap-2 border border-[#fbf4e4]/30 text-[#fbf4e4] px-4 py-3 rounded-lg text-lg bg-[#fbf4e4]/10 transition-all duration-300"
+          >
+            <MessageCircle className="w-5 h-5" />
+            Fale Conosco
+          </button>
+        </div>
+      )}
     </section>
   );
 }
